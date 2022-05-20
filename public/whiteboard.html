@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whiteboard</title>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+</head>
+<body>
+<div id="root">
+<script type="module" src="../src/components/Appbar.js"></script>
+
+
+<input type="color" id="color" onChange="getThing()"></input>
+<input type="number" id="size" onChange="getThing()"></input>
+<input type="button" value="Clear" onClick="clearAll()"></input>
+
+<input onClick="clearAll()" type="button" id="B" className="B"></input>
+
+<canvas id="whiteboard" style="border: 1px solid #020000;"  ></canvas>
+<script type="text/javascript">
+
+    var canvas = document.getElementById("whiteboard");
+    canvas.width = 720;
+    canvas.height = 480
+    var ctx = canvas.getContext("2d");
+    drawing = false;
+
+    function getThing() {
+
+        var getColor = document.getElementById("color").value;
+        var getSize = document.getElementById("size").value;
+
+        return {
+            getColor, getSize
+        };
+    }
+    function startDraw(e){
+        drawing = true;
+        Draw(e);
+    }
+
+    make_base()
+    function make_base()
+    {
+        base_image = new Image();
+        base_image.src = '/img/pitch.jpg';
+
+        base_image.onload = function() {
+            ctx.drawImage(base_image,0, 0);
+        }
+    }
+    window.addEventListener('resize', function() {
+        canvas.width = 720;
+        canvas.height = 480;
+        make_base();
+    });
+
+    function stopDraw() {
+        drawing = false;
+        ctx.beginPath()
+    }
+    function clearAll(){
+        canvas.width = canvas.width;
+        make_base();
+    }
+    function Draw(e){
+        if (!drawing) return;
+        let editor = getThing();
+        ctx.lineWidth = editor.getSize;
+        ctx.strokeStyle = editor.getColor;
+        ctx.lineCap ="round";
+        ctx.lineTo(e.clientX, e.clientY);
+        ctx.moveTo(e.clientX, e.clientY);
+        ctx.stroke();
+
+
+    }
+
+    canvas.addEventListener("mousedown", startDraw);
+    canvas.addEventListener("mouseup", stopDraw);
+    canvas.addEventListener("mousemove", Draw);
+
+    function overDraw() {
+        drawing = false;
+        ctx.beginPath();
+    }
+</script>
+</div>
+</body>
+</html>
