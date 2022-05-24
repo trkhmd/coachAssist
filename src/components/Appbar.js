@@ -29,7 +29,7 @@ export default function ButtonAppBar() {
                         AssistCoaching
                     </Typography>
                     <Button href="/" color="inherit">Accueil</Button>
-                    <Button href="/add" color="inherit">Mes Equipes</Button>
+                    <Button href="/teams" color="inherit">Mes Equipes</Button>
 
                     <a id="whiteboard" target="_blank" href={process.env.PUBLIC_URL + "whiteboard.html"} > whiteboard</a>
                 </Toolbar>

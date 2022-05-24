@@ -61,6 +61,31 @@ const styles = (theme) => {
             width: '5%',
             height: 'auto',
         },
+        ListingGrid:{
+            display: 'flex',
+            flexDirection:"column",
+            backgroundColor:"#191645",
+            textDecoration:"none",
+            listStyleType:"none",
+            color:"#FFFFFF",
+            borderRadius: "10px",
+            spaceBetween: "50px",
+        },
+        principalBox:{
+            display:"flex",
+            justifyContent:"center",
+            alignItems:"center",
+            minHeight: '100vh',
+
+
+        },
+
+        titre:{
+
+            textAlign:"center",
+            justifyContent:"center",
+        },
+
 }
 }
 

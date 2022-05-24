@@ -21,7 +21,7 @@ export const Hero = () => {
                         nisl nunc consectetur nunc, eget consectetur nunc
                         nunc velit eget nunc.
                     </Typography>
-                    <Button  href={'/add'} variant="contained" id={"boutton"} className={classes.button}>
+                    <Button  href={'/teams'} variant="contained" id={"boutton"} className={classes.button}>
                         Lancez vous
                     </Button>
                 </Grid>
