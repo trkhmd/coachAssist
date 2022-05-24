@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+
 import {Avatar, Grid, List, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -24,9 +24,9 @@ export default function ListingTeam() {
             coach:'John'}];
 
     const classes = useStyles();
-    const [dense, setDense] = React.useState(false);
-    const [secondary, setSecondary] = React.useState(false);
-    const i=0;
+    const [dense] = React.useState(false);
+
+
     return(
 
         <>
