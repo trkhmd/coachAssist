@@ -31,7 +31,7 @@ export default function ButtonAppBar() {
                     <Button href="/" color="inherit">Accueil</Button>
                     <Button href="/teams" color="inherit">Mes Equipes</Button>
 
-                    <a id="whiteboard" target="_blank" href={process.env.PUBLIC_URL + "whiteboard.html"} > whiteboard</a>
+                    <a id="whiteboard" href={process.env.PUBLIC_URL + "whiteboard.html"} > whiteboard</a>
                 </Toolbar>
             </AppBar>
         </Box>
